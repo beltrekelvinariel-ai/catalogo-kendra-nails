@@ -3,7 +3,7 @@
  * Soporte offline, caché de recursos estáticos y carga ultra rápida en celulares
  */
 
-const CACHE_NAME = 'kendra-nails-v2';
+const CACHE_NAME = 'kendra-nails-v3';
 const STATIC_ASSETS = [
   './',
   './index.html',
