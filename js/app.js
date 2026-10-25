@@ -906,7 +906,7 @@
   function openWhatsAppForDesign(design) {
     const config = window.KENDRA_CONFIG || {};
     const contact = config.contact || {};
-    const phone = contact.whatsapp || '8090000000';
+    const phone = contact.whatsapp || '18299357408';
     
     const selectedLength = AppState.selectedLengths[design.id] || 1;
     let price = design.precio;
@@ -935,7 +935,7 @@
   function openGeneralWhatsApp() {
     const config = window.KENDRA_CONFIG || {};
     const contact = config.contact || {};
-    const phone = contact.whatsapp || '8090000000';
+    const phone = contact.whatsapp || '18299357408';
     const message = encodeURIComponent('¡Hola Kendra Nails! Vi su catálogo digital y me gustaría agendar una cita o hacer una consulta.');
     window.open(`https://wa.me/${phone.replace(/[^0-9]/g, '')}?text=${message}`, '_blank');
   }

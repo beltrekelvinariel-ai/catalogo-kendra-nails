@@ -18,9 +18,10 @@ const KENDRA_CONFIG = {
     locale: "es-DO"
   },
 
-  // Contacto y redes (Completar con los datos reales cuando estén disponibles)
+  // Contacto y redes
   contact: {
-    whatsapp: "8090000000", // Colocar el número con código de país (ej: 18091234567 para República Dominicana)
+    whatsapp: "18299357408", // República Dominicana +1 (829) 935-7408
+    whatsappDisplay: "+1 (829) 935-7408",
     whatsappMessageTemplate: "¡Hola Kendra Nails! Vi su catálogo digital y me interesa consultar por el diseño *{designName}*{lengthText} con precio aproximado de *{price}*.",
     whatsappGeneralTemplate: "¡Hola Kendra Nails! Vi su catálogo digital y me gustaría agendar una cita o consultar disponibilidad.",
     instagram: "kendranails", // Usuario de Instagram sin @
