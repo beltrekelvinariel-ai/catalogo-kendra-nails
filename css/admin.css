@@ -4,23 +4,25 @@
    ========================================================================== */
 
 :root {
-  --c-plum: #35252D;
-  --c-plum-dark: #20131A;
-  --c-plum-card: #2B1B24;
-  --c-plum-border: #442D3A;
-  --c-gold: #C9A45C;
-  --c-gold-light: #F0D597;
-  --c-gold-dark: #987733;
-  --c-rose-soft: #E8B7C7;
-  --c-rose-light: #FFF7F9;
-  --c-ivory: #FFFDF9;
+  --c-plum: #1A0B26;
+  --c-plum-dark: #110619;
+  --c-plum-card: #1C0C2A;
+  --c-plum-border: #35174D;
+  --c-purple-gothic: #9A24B2;
+  --c-purple-glow: #BA3ED8;
+  --c-gold: #D4AF37;
+  --c-gold-light: #F3DA90;
+  --c-gold-dark: #C9A45C;
+  --c-rose-soft: #421B5F;
+  --c-rose-light: #251036;
+  --c-ivory: #FAF5FC;
   --c-text-main: #FFFFFF;
-  --c-text-muted: #D1B8C5;
-  --c-text-sub: #9E8592;
+  --c-text-muted: #D1BEDB;
+  --c-text-sub: #9B82A8;
   --c-success: #25D366;
   --c-warning: #FFB300;
   --c-danger: #FF5252;
-  --c-border: rgba(255, 255, 255, 0.12);
+  --c-border: #35174D;
 
   --font-display: 'Cinzel', 'Playfair Display', serif;
   --font-serif: 'Playfair Display', Georgia, serif;

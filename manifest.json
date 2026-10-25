@@ -4,8 +4,8 @@
   "description": "Catálogo digital exclusivo de Kendra Nails. Uñas que hablan de ti.",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#FFFDF9",
-  "theme_color": "#35252D",
+  "background_color": "#110619",
+  "theme_color": "#110619",
   "orientation": "portrait-primary",
   "icons": [
     {

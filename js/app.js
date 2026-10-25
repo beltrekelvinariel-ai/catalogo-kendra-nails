@@ -759,7 +759,7 @@
           ${escapeHtml(design.descripcion)}
         </p>
 
-        <div style="display:inline-flex; align-items:center; gap:6px; background:#EDF7EE; color:var(--c-success); padding:4px 10px; border-radius:var(--radius-full); font-size:0.72rem; font-weight:700; margin-bottom:16px;">
+        <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(37,211,102,0.15); color:var(--c-success); border:1px solid rgba(37,211,102,0.3); padding:4px 10px; border-radius:var(--radius-full); font-size:0.72rem; font-weight:700; margin-bottom:16px;">
           <span>✓ Precio verificado en catálogo oficial</span>
         </div>
 

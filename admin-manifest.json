@@ -4,8 +4,8 @@
   "description": "Panel de control móvil para gestionar diseños, precios y fotos de Kendra Nails.",
   "start_url": "./admin.html",
   "display": "standalone",
-  "background_color": "#24171E",
-  "theme_color": "#35252D",
+  "background_color": "#110619",
+  "theme_color": "#110619",
   "orientation": "portrait-primary",
   "icons": [
     {
