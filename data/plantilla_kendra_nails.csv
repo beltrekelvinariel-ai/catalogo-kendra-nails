@@ -1,0 +1,11 @@
+﻿id,nombre,categoria,descripcion,precio,imagen_url,destacado,visible,precio_verificado
+KN-01,Baby Boomer Clásico,Baby Boomer,"Técnica degradada suave de rosa nude a blanco lechoso en punta (Ombré). Acabado ultra sofisticado, natural y pulcro.",700,assets/images/crops/baby_boomer_card.webp,TRUE,TRUE,TRUE
+KN-02,French Clásico Cuadrado,French,Manicura francesa impecable en corte cuadrado tradicional. Base nude traslúcida y punta blanca recta ultra definida.,600,assets/images/crops/french_card.webp,TRUE,TRUE,TRUE
+KN-03,Porcelanato Milky White,Porcelanato,"Efecto porcelana lechoso uniforme (Milky White) con acabado pulcro, satinado y de aspecto ultra limpio.",700,assets/images/crops/porcelanato_1_card.webp,TRUE,TRUE,TRUE
+KN-04,Porcelanato Square Long,Porcelanato,"Variación de porcelanato lechoso en silueta cuadrada larga, perfecta para estilizar las manos con presencia pulida.",700,assets/images/crops/porcelanato_2_card.webp,FALSE,TRUE,TRUE
+KN-05,Full Set Luxury Gold & Pearls,Full Set,"Set completo de alta gama con pedrería fina, cadenas doradas colgantes, perlas y detalles franceses joya.",1000,assets/images/crops/fullset_luxury_card.webp,TRUE,TRUE,TRUE
+KN-06,Full Set 3D Floral & Leopard,Full Set,"Nail art escultural con flores acrílicas 3D moldeadas a mano, centro de cristal, y animal print sobre punta francesa.",1000,assets/images/crops/fullset_floral_card.webp,TRUE,TRUE,TRUE
+KN-07,Cover Liso Nude Natural,Cover Liso,"Acrílico cover en tono nude piel uniforme, corte square estructurado y acabado liso brillante de alta duración.",600,assets/images/crops/cover_liso_card.webp,FALSE,TRUE,TRUE
+KN-08,Acrílico y Gel Black Croc Effect,Acrílico y Gel,Diseño moderno en forma almendrada combinando french negro de impacto con relieve táctil efecto piel de cocodrilo brillante.,700,assets/images/crops/acrilico_gel_card.webp,TRUE,TRUE,TRUE
+KN-09,Pintura en Gel (Pies),Pies / Pedicura,"Esmaltado semipermanente en gel para uñas de los pies, con base traslúcida, línea French fina opcional y máximo brillo.",350,assets/images/crops/pies_gel_card.webp,FALSE,TRUE,TRUE
+KN-10,Acripies (Pies),Pies / Pedicura,"Aplicación de acrílico y reconstrucción en las uñas de los pies con punta French blanca, acabado uniforme y resistencia duradera.",500,assets/images/crops/pies_acripies_card.webp,TRUE,TRUE,TRUE

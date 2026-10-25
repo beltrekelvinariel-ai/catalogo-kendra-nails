@@ -1,0 +1,13 @@
+{
+  "nombre": "Kendra Nails",
+  "slogan": "✦ Uñas que hablan de ti ✦",
+  "descripcion": "Estudio especializado en diseño, esculpido y cuidado premium de uñas. Diseños exclusivos, técnicas modernas y acabados impecables para resaltar tu belleza y estilo.",
+  "moneda": "DOP",
+  "simbolo_moneda": "RD$",
+  "whatsapp": "8090000000",
+  "whatsapp_mensaje_template": "¡Hola Kendra Nails! Vi su catálogo digital y me gustaría consultar disponibilidad para el diseño {diseno} en largo {largo} (Precio: {precio}).",
+  "instagram": "@kendranails",
+  "ubicacion": "Previa cita — Contáctanos para enviarte nuestra ubicación exacta",
+  "horarios": "Lunes a Sábado: 9:00 AM – 7:00 PM (Previa cita)",
+  "google_sheet_csv_url": ""
+}

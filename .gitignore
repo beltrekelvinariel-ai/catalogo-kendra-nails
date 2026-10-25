@@ -1,0 +1,14 @@
+# Archivos del sistema y temporales
+.DS_Store
+Thumbs.db
+*.log
+__pycache__/
+*.pyc
+
+# Entornos virtuales
+.venv/
+env/
+venv/
+
+# Scripts de construcción temporales
+build_data.py

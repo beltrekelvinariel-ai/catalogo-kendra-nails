@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Kendra Nails — Panel de Administración Móvil</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#20131A">
+
+  <!-- PWA Admin Manifest -->
+  <link rel="manifest" href="admin-manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Kendra Admin">
+  <link rel="apple-touch-icon" href="assets/images/crops/kendra_logo_circle.png">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Tipografías Luxury -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- =======================================================================
+       1. PANTALLA DE ACCESO SEGURO (LOGIN OVERLAY)
+       ======================================================================= -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-emblem">
+      <img src="assets/images/crops/kendra_logo_circle.png" alt="Kendra Nails">
+    </div>
+    <h1 class="login-title">KENDRA NAILS</h1>
+    <p class="login-subtitle">Panel de Control Móvil</p>
+
+    <div class="login-card">
+      <div class="login-input-group">
+        <label for="adminPinInput">Clave de acceso:</label>
+        <input type="password" id="adminPinInput" class="login-input" placeholder="Introduce tu clave..." autocomplete="current-password" autofocus>
+      </div>
+
+      <button type="button" class="btn-login-submit" id="loginSubmitBtn">
+        Iniciar Sesión
+      </button>
+
+      <p class="login-help-text">
+        🔒 Acceso privado exclusivo para la administración de Kendra Nails.
+      </p>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       2. TOP BAR DE ADMINISTRACIÓN
+       ======================================================================= -->
+  <header class="admin-top-bar">
+    <div class="admin-bar-brand">
+      <div class="admin-avatar-mini">
+        <img src="assets/images/crops/kendra_logo_circle.png" alt="Kendra Nails">
+      </div>
+      <div class="admin-title-wrap">
+        <span class="admin-app-name">Kendra Nails</span>
+        <span class="admin-role-badge">✦ Panel de Control ✦</span>
+      </div>
+    </div>
+
+    <div class="admin-bar-actions">
+      <!-- Ver catálogo público -->
+      <a href="index.html" target="_blank" class="btn-admin-icon" title="Ver catálogo público como clienta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+
+      <!-- Cerrar sesión -->
+      <button class="btn-admin-icon" id="btnLogout" title="Cerrar sesión">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+          <polyline points="16 17 21 12 16 7"/>
+          <line x1="21" y1="12" x2="9" y2="12"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       3. CONTENIDO PRINCIPAL POR PESTAÑAS (MOBILE TABS)
+       ======================================================================= -->
+  <main>
+    <!-- TAB 1: DASHBOARD / INICIO -->
+    <section class="admin-section active" id="sec-dashboard">
+      <div class="dashboard-header">
+        <h2 class="dashboard-title">Resumen del Catálogo</h2>
+        <p class="dashboard-subtitle">Gestiona tus diseños y precios directamente desde tu teléfono.</p>
+      </div>
+
+      <!-- Tarjetas de métricas reales -->
+      <div class="stats-cards-grid">
+        <div class="stat-card featured">
+          <div class="stat-icon-row">
+            <span class="stat-label">Publicados</span>
+            <div class="stat-icon green">✓</div>
+          </div>
+          <div class="stat-number" id="statPublished">0</div>
+          <span style="font-size:0.68rem; color:var(--c-text-muted);">Visibles para clientas</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-row">
+            <span class="stat-label">Total Diseños</span>
+            <div class="stat-icon gold">💅</div>
+          </div>
+          <div class="stat-number" id="statTotal">0</div>
+          <span style="font-size:0.68rem; color:var(--c-text-muted);">En el inventario</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-row">
+            <span class="stat-label">Ocultos</span>
+            <div class="stat-icon gray">👁️</div>
+          </div>
+          <div class="stat-number" id="statHidden">0</div>
+          <span style="font-size:0.68rem; color:var(--c-text-muted);">Pausados / Borradores</span>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon-row">
+            <span class="stat-label">Por Revisar</span>
+            <div class="stat-icon warn">⚠️</div>
+          </div>
+          <div class="stat-number" id="statReview">0</div>
+          <span style="font-size:0.68rem; color:var(--c-text-muted);">Con notas o dudas</span>
+        </div>
+      </div>
+
+      <!-- Accesos Rápidos -->
+      <div class="quick-actions-box">
+        <h3>Accesos Rápidos</h3>
+        <div class="quick-actions-list">
+          <button class="btn-quick-action" onclick="window.KendraAdmin.switchTab('add')">
+            <span>➕ Agregar nuevo diseño desde la cámara/galería</span>
+            <span>&rarr;</span>
+          </button>
+          <button class="btn-quick-action" onclick="window.KendraAdmin.switchTab('designs')">
+            <span>💅 Gestionar diseños, fotos y precios</span>
+            <span>&rarr;</span>
+          </button>
+          <button class="btn-quick-action" onclick="window.KendraAdmin.switchTab('settings')">
+            <span>📊 Conexión con Google Sheets y copias de seguridad</span>
+            <span>&rarr;</span>
+          </button>
+          <a href="index.html" target="_blank" class="btn-quick-action" style="color:var(--c-gold-light);">
+            <span>👁️ Abrir Catálogo Público (Vista de Clienta)</span>
+            <span>↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: GESTIONAR DISEÑOS -->
+    <section class="admin-section" id="sec-designs">
+      <div style="margin-bottom:12px;">
+        <h2 class="dashboard-title">Tus Diseños</h2>
+        <p class="dashboard-subtitle">Busca, edita precios u oculta estilos con un solo toque.</p>
+      </div>
+
+      <!-- Buscador -->
+      <div class="designs-search-bar">
+        <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <input type="text" id="adminSearchInput" placeholder="Buscar por nombre, categoría o precio...">
+      </div>
+
+      <!-- Filtros rápidos de estado -->
+      <div class="designs-status-filter">
+        <button class="filter-btn-admin active" data-filter="all">Todos</button>
+        <button class="filter-btn-admin" data-filter="published">Publicados</button>
+        <button class="filter-btn-admin" data-filter="hidden">Ocultos</button>
+        <button class="filter-btn-admin" data-filter="review">Con Notas</button>
+      </div>
+
+      <!-- Lista dinámica de diseños -->
+      <div id="adminDesignsList">
+        <!-- Renderizado dinámico con JS -->
+      </div>
+    </section>
+
+    <!-- TAB 3: AGREGAR DISEÑO -->
+    <section class="admin-section" id="sec-add">
+      <div style="margin-bottom:14px;">
+        <h2 class="dashboard-title">Nuevo Diseño</h2>
+        <p class="dashboard-subtitle">Sube una fotografía de tu trabajo y asígnale su precio.</p>
+      </div>
+
+      <form class="admin-form-card" id="addDesignForm">
+        <!-- Selector táctil de foto con cámara o galería -->
+        <div class="form-group-mobile">
+          <label class="form-label-mobile">Fotografía del trabajo:</label>
+          
+          <label class="photo-upload-zone" for="newDesignPhotoInput">
+            <div class="photo-preview-box" id="newDesignPreviewBox">
+              <img src="" id="newDesignPreviewImg" alt="Vista previa">
+            </div>
+
+            <div id="photoUploadPrompt">
+              <div class="photo-upload-icon">📸</div>
+              <div class="photo-upload-text">
+                <strong>Toca para tomar una foto</strong> o elegir de tu galería
+              </div>
+            </div>
+
+            <span class="photo-compress-badge" id="photoCompressBadge" style="display:none;"></span>
+          </label>
+          <input type="file" id="newDesignPhotoInput" accept="image/*" capture="environment" style="display:none;">
+        </div>
+
+        <div class="form-group-mobile">
+          <label for="newDesignName" class="form-label-mobile">Nombre del diseño *</label>
+          <input type="text" id="newDesignName" class="form-input-mobile" placeholder="Ej: Baby Boomer Almendrado" required autocomplete="off">
+        </div>
+
+        <div class="form-group-mobile">
+          <label for="newDesignCategory" class="form-label-mobile">Categoría *</label>
+          <select id="newDesignCategory" class="form-select-mobile">
+            <option value="Baby Boomer">Baby Boomer</option>
+            <option value="French">French</option>
+            <option value="Porcelanato">Porcelanato</option>
+            <option value="Full Set">Full Set</option>
+            <option value="Cover Liso">Cover Liso</option>
+            <option value="Acrílico y Gel">Acrílico y Gel</option>
+            <option value="Pies / Pedicura">Pies / Pedicura</option>
+            <option value="Especial">Especial</option>
+          </select>
+        </div>
+
+        <div class="form-group-mobile">
+          <label for="newDesignPrice" class="form-label-mobile">Precio base (Pesos RD$) *</label>
+          <input type="number" id="newDesignPrice" class="form-input-mobile" placeholder="700" inputmode="decimal" required>
+        </div>
+
+        <div class="form-group-mobile">
+          <label for="newDesignDesc" class="form-label-mobile">Descripción breve (opcional)</label>
+          <textarea id="newDesignDesc" class="form-textarea-mobile" placeholder="Detalles de la técnica, colores o pedrería..."></textarea>
+        </div>
+
+        <div class="switch-row">
+          <div>
+            <div class="switch-label-text">Marcar como Destacado</div>
+            <div class="switch-subtext">Aparecerá en los primeros lugares con insignia dorada</div>
+          </div>
+          <input type="checkbox" id="newDesignFeatured" class="toggle-input">
+        </div>
+
+        <div class="switch-row">
+          <div>
+            <div class="switch-label-text">Publicar inmediatamente</div>
+            <div class="switch-subtext">Visible al público en cuanto guardes</div>
+          </div>
+          <input type="checkbox" id="newDesignPublishImmediately" class="toggle-input" checked>
+        </div>
+
+        <button type="submit" class="btn-form-save">
+          Guardar Diseño
+        </button>
+      </form>
+    </section>
+
+    <!-- TAB 4: AJUSTES Y SINCRONIZACIÓN -->
+    <section class="admin-section" id="sec-settings">
+      <div style="margin-bottom:14px;">
+        <h2 class="dashboard-title">Ajustes & Conexión</h2>
+        <p class="dashboard-subtitle">Configura Google Sheets, copias de seguridad y claves.</p>
+      </div>
+
+      <div class="admin-form-card" style="margin-bottom:16px;">
+        <h3 style="font-size:0.95rem; color:var(--c-gold-light); margin-bottom:8px;">📊 Google Sheets & Nube</h3>
+        <p style="font-size:0.8rem; color:var(--c-text-muted); line-height:1.5; margin-bottom:12px;">
+          Tus diseños se guardan en este teléfono de forma permanente. Si deseas sincronizarlos con tu hoja de cálculo de Google Sheets en la nube:
+        </p>
+
+        <button class="btn-quick-action" id="btnExportCSV" style="margin-bottom:8px;">
+          <span>📥 Descargar plantilla CSV actualizada</span>
+          <span>&darr;</span>
+        </button>
+
+        <button class="btn-quick-action" id="btnExportJSON">
+          <span>💾 Descargar copia de seguridad completa (JSON)</span>
+          <span>&darr;</span>
+        </button>
+      </div>
+
+      <div class="admin-form-card">
+        <h3 style="font-size:0.95rem; color:var(--c-gold-light); margin-bottom:8px;">🔒 Seguridad del Panel</h3>
+        <p style="font-size:0.8rem; color:var(--c-text-muted); margin-bottom:12px;">
+          Clave maestra por defecto: <code>kendra2026</code>. Puedes cambiarla cuando gustes:
+        </p>
+        <button class="btn-quick-action" id="btnChangePin">
+          <span>🔑 Cambiar clave de acceso</span>
+          <span>&rarr;</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       4. BARRA INFERIOR DE ADMINISTRACIÓN MÓVIL (THUMB BAR)
+       ======================================================================= -->
+  <nav class="admin-bottom-bar" aria-label="Navegación del panel">
+    <button class="admin-tab-btn active" data-tab="dashboard">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="7" height="7"/>
+        <rect x="14" y="3" width="7" height="7"/>
+        <rect x="14" y="14" width="7" height="7"/>
+        <rect x="3" y="14" width="7" height="7"/>
+      </svg>
+      <span>Inicio</span>
+    </button>
+
+    <button class="admin-tab-btn" data-tab="designs">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="8" y1="6" x2="21" y2="6"/>
+        <line x1="8" y1="12" x2="21" y2="12"/>
+        <line x1="8" y1="18" x2="21" y2="18"/>
+        <line x1="3" y1="6" x2="3.01" y2="6"/>
+        <line x1="3" y1="12" x2="3.01" y2="12"/>
+        <line x1="3" y1="18" x2="3.01" y2="18"/>
+      </svg>
+      <span>Diseños</span>
+    </button>
+
+    <button class="admin-tab-btn" data-tab="add">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="16"/>
+        <line x1="8" y1="12" x2="16" y2="12"/>
+      </svg>
+      <span>Agregar</span>
+    </button>
+
+    <button class="admin-tab-btn" data-tab="settings">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+      </svg>
+      <span>Ajustes</span>
+    </button>
+  </nav>
+
+  <!-- =======================================================================
+       5. MODAL DE EDICIÓN MÓVIL (BOTTOM SHEET)
+       ======================================================================= -->
+  <div class="admin-modal-overlay" id="editDesignModalOverlay" role="dialog" aria-modal="true">
+    <div class="admin-sheet-dialog">
+      <div class="admin-sheet-header">
+        <h3 style="font-family:var(--font-display); font-size:1.1rem; color:var(--c-gold-light);">Editar Diseño</h3>
+        <button class="btn-sheet-close" id="closeEditModalBtn">&times;</button>
+      </div>
+
+      <div class="admin-sheet-body">
+        <div style="display:flex; gap:12px; align-items:center; margin-bottom:16px;">
+          <img src="" id="editDesignCurrentImg" style="width:64px; height:64px; border-radius:10px; object-fit:cover; border:1px solid var(--c-border);">
+          <div style="font-size:0.8rem; color:var(--c-text-muted);">
+            Puedes editar el nombre, precio, categoría y estado de visibilidad.
+          </div>
+        </div>
+
+        <div class="form-group-mobile">
+          <label class="form-label-mobile">Nombre:</label>
+          <input type="text" id="editDesignName" class="form-input-mobile">
+        </div>
+
+        <div class="form-group-mobile">
+          <label class="form-label-mobile">Categoría:</label>
+          <select id="editDesignCategory" class="form-select-mobile">
+            <option value="Baby Boomer">Baby Boomer</option>
+            <option value="French">French</option>
+            <option value="Porcelanato">Porcelanato</option>
+            <option value="Full Set">Full Set</option>
+            <option value="Cover Liso">Cover Liso</option>
+            <option value="Acrílico y Gel">Acrílico y Gel</option>
+            <option value="Pies / Pedicura">Pies / Pedicura</option>
+            <option value="Especial">Especial</option>
+          </select>
+        </div>
+
+        <div class="form-group-mobile">
+          <label class="form-label-mobile">Precio (RD$):</label>
+          <input type="number" id="editDesignPrice" class="form-input-mobile" inputmode="decimal">
+        </div>
+
+        <div class="form-group-mobile">
+          <label class="form-label-mobile">Descripción:</label>
+          <textarea id="editDesignDesc" class="form-textarea-mobile"></textarea>
+        </div>
+
+        <div class="switch-row">
+          <div class="switch-label-text">Diseño Destacado</div>
+          <input type="checkbox" id="editDesignFeatured" class="toggle-input">
+        </div>
+
+        <div class="switch-row" style="margin-bottom:20px;">
+          <div class="switch-label-text">Visible en catálogo público</div>
+          <input type="checkbox" id="editDesignVisible" class="toggle-input">
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <button type="button" class="btn-form-save" id="saveEditBtn">
+            Guardar Cambios
+          </button>
+          <button type="button" class="btn-quick-action" id="deleteDesignBtn" style="justify-content:center; color:var(--c-danger); border-color:rgba(255,82,82,0.3);">
+            🗑️ Eliminar Diseño
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="admin-toast-container" id="adminToastContainer"></div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>

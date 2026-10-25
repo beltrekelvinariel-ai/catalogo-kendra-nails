@@ -1,0 +1,1097 @@
+/* ==========================================================================
+   KENDRA NAILS — PREMIUM DIGITAL CATALOG STYLESHEET (MOBILE-FIRST EDITION)
+   Optimizada específicamente para celulares, navegación con pulgar y PWA
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES & DESIGN TOKENS
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta oficial de Kendra Nails */
+  --c-rose-soft: #E8B7C7;
+  --c-rose-light: #FFF7F9;
+  --c-ivory: #FFFDF9;
+  --c-gold: #C9A45C;
+  --c-gold-light: #F0D597;
+  --c-gold-dark: #987733;
+  --c-plum: #35252D;
+  --c-plum-dark: #22161D;
+  --c-plum-deep: #190F15;
+  --c-plum-light: #4A3440;
+  --c-rose-muted: #A66B83;
+  --c-rose-deep: #8E526C;
+
+  /* Colores funcionales */
+  --c-bg: #FFFDF9;
+  --c-bg-card: #FFFFFF;
+  --c-bg-alt: #FFF7F9;
+  --c-text-main: #2D1E26;
+  --c-text-muted: #6B5560;
+  --c-text-light: #9B838E;
+  --c-border: #F0DEE5;
+  --c-border-gold: rgba(201, 164, 92, 0.4);
+  --c-success: #2E7D32;
+  --c-whatsapp: #25D366;
+
+  /* Gradientes */
+  --grad-gold: linear-gradient(135deg, #F0D597 0%, #C9A45C 50%, #987733 100%);
+  --grad-plum: linear-gradient(145deg, #3E2935 0%, #24171E 100%);
+  --grad-rose: linear-gradient(135deg, #FFF7F9 0%, #F8E5EC 100%);
+
+  /* Tipografías */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-display: 'Cinzel', 'Playfair Display', serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Sombras luxury */
+  --shadow-sm: 0 2px 8px rgba(53, 37, 45, 0.05);
+  --shadow-md: 0 8px 24px rgba(53, 37, 45, 0.08);
+  --shadow-lg: 0 16px 40px rgba(53, 37, 45, 0.14);
+  --shadow-gold: 0 8px 25px rgba(201, 164, 92, 0.25);
+  --shadow-card: 0 4px 16px rgba(53, 37, 45, 0.06);
+
+  /* Bordes & Transiciones */
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  --radius-full: 9999px;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+  /* Dimensiones seguras móviles */
+  --header-height: 64px;
+  --bottom-bar-height: 62px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & MOBILE OPTIMIZATIONS
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--c-bg);
+  color: var(--c-text-main);
+  line-height: 1.5;
+  overflow-x: hidden;
+  padding-bottom: calc(var(--bottom-bar-height) + var(--safe-bottom) + 24px);
+  touch-action: manipulation;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  touch-action: manipulation;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* --------------------------------------------------------------------------
+   3. HEADER / TOP BAR (APP STYLE)
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: calc(var(--header-height) + var(--safe-top));
+  padding-top: var(--safe-top);
+  background: rgba(255, 253, 249, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--c-border);
+  transition: var(--transition-normal);
+}
+
+.header-inner {
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.brand-emblem {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--c-gold);
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(201, 164, 92, 0.25);
+  flex-shrink: 0;
+}
+
+.brand-emblem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.brand-titles {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--c-plum);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.brand-name span {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--c-rose-deep);
+  font-size: 1.25rem;
+}
+
+.brand-tagline {
+  font-size: 0.62rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--c-gold-dark);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-header-action {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--c-rose-light);
+  border: 1px solid var(--c-rose-soft);
+  color: var(--c-plum);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+.btn-header-action:active {
+  transform: scale(0.92);
+  background: var(--c-rose-soft);
+}
+
+.fav-counter-badge {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: var(--c-plum);
+  color: var(--c-gold-light);
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: var(--radius-full);
+  min-width: 17px;
+  text-align: center;
+  border: 1.5px solid #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   4. HERO / PORTADA COMPACTA & MÓVIL
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  padding: 24px 0 32px;
+  background: linear-gradient(180deg, #FFF7F9 0%, #FFFDF9 100%);
+  border-bottom: 1px solid var(--c-border);
+  overflow: hidden;
+}
+
+.hero-mobile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  background: #FFFFFF;
+  border: 1px solid var(--c-gold-light);
+  color: var(--c-gold-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-title-mobile {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 6.5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--c-plum);
+  line-height: 1.15;
+}
+
+.hero-title-mobile .title-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--c-rose-deep);
+  display: block;
+  font-size: 0.9em;
+}
+
+.hero-text-mobile {
+  font-size: 0.9rem;
+  color: var(--c-text-muted);
+  max-width: 440px;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+/* Vitrina de fotos circular con destello luxury */
+.hero-reel-mobile {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  margin: 4px auto;
+}
+
+.hero-reel-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  border: 4px solid #FFFFFF;
+  box-shadow: var(--shadow-lg), 0 0 0 2px var(--c-gold);
+  overflow: hidden;
+  background: var(--c-plum);
+}
+
+.hero-reel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+}
+
+.hero-reel-badge {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(34, 22, 29, 0.92);
+  backdrop-filter: blur(8px);
+  color: #FFFFFF;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid var(--c-gold);
+  box-shadow: var(--shadow-md);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-reel-badge span {
+  color: var(--c-gold-light);
+  font-weight: 700;
+}
+
+/* Botones de acción principales */
+.hero-cta-group {
+  display: flex;
+  width: 100%;
+  max-width: 360px;
+  gap: 10px;
+}
+
+.btn-hero-primary {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 18px;
+  border-radius: var(--radius-full);
+  background: var(--c-plum);
+  color: var(--c-ivory);
+  font-size: 0.88rem;
+  font-weight: 700;
+  box-shadow: 0 4px 16px rgba(53, 37, 45, 0.25);
+  transition: transform var(--transition-fast);
+}
+
+.btn-hero-primary:active {
+  transform: scale(0.96);
+}
+
+.btn-hero-secondary {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 13px 14px;
+  border-radius: var(--radius-full);
+  background: #FFFFFF;
+  border: 1.5px solid var(--c-border);
+  color: var(--c-plum);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.btn-hero-secondary:active {
+  transform: scale(0.96);
+}
+
+/* --------------------------------------------------------------------------
+   5. BARRA DE HERRAMIENTAS Y FILTROS ADAPTABLES
+   -------------------------------------------------------------------------- */
+.catalog-toolbar-section {
+  position: sticky;
+  top: calc(var(--header-height) + var(--safe-top));
+  z-index: 95;
+  background: rgba(255, 253, 249, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--c-border);
+  padding: 12px 0 8px;
+}
+
+.toolbar-search-box {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.toolbar-search-box .search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--c-text-light);
+  pointer-events: none;
+}
+
+.search-input-mobile {
+  width: 100%;
+  height: 44px;
+  padding: 0 38px 0 42px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--c-border);
+  background: #FFFFFF;
+  font-size: 0.9rem;
+  color: var(--c-text-main);
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+
+.search-input-mobile:focus {
+  border-color: var(--c-gold);
+}
+
+.search-clear-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--c-border);
+  color: var(--c-plum);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.search-clear-btn.active {
+  display: flex;
+}
+
+/* Pastillas de filtro horizontales con desplazamiento táctil suave */
+.filter-scroll-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 2px 8px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.filter-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.filter-pill {
+  padding: 7px 14px;
+  border-radius: var(--radius-full);
+  background: #FFFFFF;
+  border: 1px solid var(--c-border);
+  color: var(--c-text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  flex-shrink: 0;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.filter-pill:active {
+  transform: scale(0.95);
+}
+
+.filter-pill.active {
+  background: var(--c-plum);
+  color: var(--c-ivory);
+  border-color: var(--c-plum);
+  box-shadow: 0 2px 8px rgba(53, 37, 45, 0.2);
+}
+
+.filter-pill.active .pill-count {
+  background: var(--c-gold);
+  color: var(--c-plum-dark);
+}
+
+.pill-count {
+  font-size: 0.68rem;
+  padding: 1px 5px;
+  border-radius: var(--radius-full);
+  background: var(--c-rose-light);
+  color: var(--c-plum);
+  font-weight: 700;
+}
+
+/* Barra de control secundario: Vista y Orden */
+.catalog-controls-subrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0 2px;
+  font-size: 0.8rem;
+  color: var(--c-text-muted);
+}
+
+.view-layout-toggle {
+  display: flex;
+  align-items: center;
+  background: var(--c-rose-light);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-full);
+  padding: 2px;
+  gap: 2px;
+}
+
+.btn-view-toggle {
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  color: var(--c-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  gap: 4px;
+}
+
+.btn-view-toggle.active {
+  background: #FFFFFF;
+  color: var(--c-plum);
+  font-weight: 700;
+  box-shadow: var(--shadow-sm);
+}
+
+.sort-select-mobile {
+  padding: 5px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--c-border);
+  background: #FFFFFF;
+  color: var(--c-plum);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   6. CUADRÍCULA DE DISEÑOS EN CELULAR (1 COLUMNA & 2 COLUMNAS)
+   -------------------------------------------------------------------------- */
+.catalog-container {
+  padding: 16px 0 40px;
+}
+
+/* Modo 2 Columnas (Por defecto en celular para visualización rápida) */
+.designs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+/* Modo 1 Columna (Vista editorial grande tipo Instagram Feed) */
+.designs-grid.view-1-col {
+  grid-template-columns: 1fr;
+  gap: 20px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.design-card {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--c-border);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--c-bg-alt);
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-badge-top-left {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 2;
+}
+
+.badge-featured-mini {
+  background: var(--c-plum);
+  color: var(--c-gold-light);
+  font-size: 0.62rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--c-gold);
+  box-shadow: var(--shadow-sm);
+}
+
+.badge-cat-mini {
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--c-plum);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--c-border);
+  width: fit-content;
+}
+
+.btn-card-fav {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-text-light);
+  z-index: 2;
+  transition: transform var(--transition-fast);
+}
+
+.btn-card-fav:active {
+  transform: scale(1.15);
+}
+
+.btn-card-fav.active {
+  color: #E53935;
+  background: #FFF0F2;
+}
+
+.card-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-title-text {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--c-plum);
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+
+.designs-grid.view-1-col .card-title-text {
+  font-size: 1.15rem;
+}
+
+.card-desc-snippet {
+  display: none;
+  font-size: 0.82rem;
+  color: var(--c-text-muted);
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+.designs-grid.view-1-col .card-desc-snippet {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Selector interactivo de largo en la tarjeta */
+.card-lengths-chips {
+  margin: 6px 0;
+  background: var(--c-rose-light);
+  padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--c-plum);
+}
+
+.card-lengths-chips strong {
+  color: var(--c-gold-dark);
+}
+
+.card-price-row {
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px dashed var(--c-border);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.card-price-amount {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--c-plum);
+}
+
+.designs-grid.view-1-col .card-price-amount {
+  font-size: 1.35rem;
+}
+
+.card-price-amount .currency {
+  font-size: 0.8rem;
+  color: var(--c-gold-dark);
+  margin-right: 2px;
+}
+
+.card-actions-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.btn-card-open {
+  padding: 8px 10px;
+  border-radius: var(--radius-full);
+  background: var(--c-rose-light);
+  border: 1px solid var(--c-rose-soft);
+  color: var(--c-plum);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.btn-card-open:active {
+  background: var(--c-plum);
+  color: #FFFFFF;
+}
+
+.btn-card-quick-wa {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #E8F8EE;
+  color: var(--c-whatsapp);
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-card-quick-wa:active {
+  transform: scale(0.9);
+  background: var(--c-whatsapp);
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   7. MODAL ESTILO BOTTOM SHEET DRAWER (NATIVO DE CELULAR)
+   -------------------------------------------------------------------------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(25, 15, 21, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bottom-sheet-card {
+  width: 100%;
+  max-width: 600px;
+  max-height: 88vh;
+  background: #FFFFFF;
+  border-radius: 24px 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.25);
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.modal-overlay.active .bottom-sheet-card {
+  transform: translateY(0);
+}
+
+.sheet-handle-bar {
+  width: 44px;
+  height: 5px;
+  background: #E0CCD5;
+  border-radius: var(--radius-full);
+  margin: 10px auto 4px;
+  flex-shrink: 0;
+}
+
+.sheet-header-mobile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 18px 12px;
+  border-bottom: 1px solid var(--c-border);
+}
+
+.btn-sheet-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--c-rose-light);
+  color: var(--c-plum);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.sheet-body-scrollable {
+  overflow-y: auto;
+  padding: 16px 18px 100px; /* Padding extra para que el botón flotante no tape texto */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Pestañas multimedia táctiles */
+.sheet-tabs-row {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none;
+}
+
+.sheet-tab-pill {
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  background: var(--c-rose-light);
+  border: 1px solid var(--c-border);
+  color: var(--c-plum);
+  font-size: 0.75rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.sheet-tab-pill.active {
+  background: var(--c-plum);
+  color: var(--c-gold-light);
+  border-color: var(--c-plum);
+}
+
+/* Cuadrícula de selector de largos en el modal */
+.modal-lengths-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 12px 0 16px;
+}
+
+.modal-length-btn {
+  padding: 8px 4px;
+  border-radius: var(--radius-sm);
+  background: #FFFFFF;
+  border: 1.5px solid var(--c-border);
+  color: var(--c-plum);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+  transition: var(--transition-fast);
+}
+
+.modal-length-btn.active {
+  background: var(--c-plum);
+  color: var(--c-gold-light);
+  border-color: var(--c-plum);
+  box-shadow: 0 2px 8px rgba(53, 37, 45, 0.25);
+}
+
+/* Barra fija inferior en el modal con el botón de WhatsApp al alcance del pulgar */
+.sheet-fixed-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  padding: 12px 18px calc(12px + var(--safe-bottom));
+  border-top: 1px solid var(--c-border);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.btn-sheet-wa-cta {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  border-radius: var(--radius-full);
+  background: var(--c-whatsapp);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.92rem;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+}
+
+.btn-sheet-wa-cta:active {
+  transform: scale(0.97);
+}
+
+/* --------------------------------------------------------------------------
+   8. BARRA DE NAVEGACIÓN INFERIOR PARA MÓVILES (THUMB BAR)
+   -------------------------------------------------------------------------- */
+.mobile-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--bottom-bar-height) + var(--safe-bottom));
+  padding-bottom: var(--safe-bottom);
+  background: rgba(255, 253, 249, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--c-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 1000;
+  box-shadow: 0 -4px 20px rgba(53, 37, 45, 0.08);
+}
+
+.thumb-nav-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: var(--c-text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.thumb-nav-btn:active {
+  transform: scale(0.92);
+}
+
+.thumb-nav-btn.active {
+  color: var(--c-plum);
+  font-weight: 700;
+}
+
+.thumb-nav-btn.active svg {
+  color: var(--c-gold-dark);
+}
+
+.thumb-badge {
+  position: absolute;
+  top: 3px;
+  right: 12px;
+  background: var(--c-plum);
+  color: var(--c-gold-light);
+  font-size: 0.62rem;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: var(--radius-full);
+}
+
+/* Botón flotante directo para WhatsApp */
+.floating-wa-bubble {
+  position: fixed;
+  bottom: calc(var(--bottom-bar-height) + var(--safe-bottom) + 14px);
+  right: 16px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--c-whatsapp);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.4);
+  z-index: 900;
+  transition: transform var(--transition-fast);
+}
+
+.floating-wa-bubble:active {
+  transform: scale(0.9);
+}
+
+/* --------------------------------------------------------------------------
+   9. TOASTS & NOTIFICACIONES
+   -------------------------------------------------------------------------- */
+.toast-container {
+  position: fixed;
+  bottom: calc(var(--bottom-bar-height) + var(--safe-bottom) + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2500;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+  max-width: 90vw;
+}
+
+.toast {
+  background: var(--c-plum-dark);
+  color: var(--c-ivory);
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--c-gold);
+}
+
+/* Estilos de tablet y escritorio (conservando la elegancia en pantallas grandes) */
+@media (min-width: 768px) {
+  .designs-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .designs-grid.view-1-col {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .designs-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+  .bottom-sheet-card {
+    border-radius: var(--radius-lg);
+    margin: auto;
+  }
+  .modal-overlay {
+    align-items: center;
+    padding: 20px;
+  }
+}

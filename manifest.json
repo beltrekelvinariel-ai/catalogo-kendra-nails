@@ -1,0 +1,22 @@
+{
+  "name": "Kendra Nails — Catálogo Digital",
+  "short_name": "Kendra Nails",
+  "description": "Catálogo digital exclusivo de Kendra Nails. Uñas que hablan de ti.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FFFDF9",
+  "theme_color": "#35252D",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/crops/kendra_logo_circle.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/crops/kendra_logo_circle.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

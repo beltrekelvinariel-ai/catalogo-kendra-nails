@@ -1,0 +1,22 @@
+{
+  "name": "Kendra Nails — Panel de Administración",
+  "short_name": "Kendra Admin",
+  "description": "Panel de control móvil para gestionar diseños, precios y fotos de Kendra Nails.",
+  "start_url": "./admin.html",
+  "display": "standalone",
+  "background_color": "#24171E",
+  "theme_color": "#35252D",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/images/crops/kendra_logo_circle.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/images/crops/kendra_logo_circle.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

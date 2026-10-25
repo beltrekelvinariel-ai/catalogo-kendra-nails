@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Kendra Nails — Catálogo Digital Premium</title>
+  <meta name="description" content="Catálogo digital interactivo de Kendra Nails para celulares. Explora diseños de uñas reales, selecciona tu largo (#1 al #8) y consulta precios transparentes en pesos dominicanos.">
+  <meta name="theme-color" content="#35252D">
+
+  <!-- Configuración PWA / Modo App en Celulares (iPhone & Android) -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Kendra Nails">
+  <link rel="apple-touch-icon" href="assets/images/crops/kendra_logo_circle.png">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Open Graph para compartir en WhatsApp e Instagram -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Kendra Nails — Catálogo Digital Premium">
+  <meta property="og:description" content="✦ Uñas que hablan de ti ✦ Explora nuestros diseños y precios reales en acrílico, French, Baby Boomer, Porcelanato y pedicura.">
+  <meta property="og:image" content="assets/images/crops/kendra_logo_square.jpg">
+
+  <!-- Google Fonts: Playfair Display, Cinzel, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- =======================================================================
+       1. CABECERA SUPERIOR MÓVIL (TOP BAR ESTILO APP)
+       ======================================================================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#inicio" class="header-brand" aria-label="Kendra Nails Inicio">
+        <div class="brand-emblem">
+          <img src="assets/images/crops/kendra_logo_circle.png" alt="Emblema Kendra Nails" onerror="this.onerror=null; this.src='assets/favicon.svg';">
+        </div>
+        <div class="brand-titles">
+          <span class="brand-name">KENDRA <span>Nails</span></span>
+          <span class="brand-tagline">✦ Uñas que hablan de ti ✦</span>
+        </div>
+      </a>
+
+      <div class="header-actions">
+        <!-- Botón Compartir Catálogo -->
+        <button class="btn-header-action" id="btnShareCatalog" aria-label="Compartir catálogo" title="Compartir catálogo">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="18" cy="5" r="3"/>
+            <circle cx="6" cy="12" r="3"/>
+            <circle cx="18" cy="19" r="3"/>
+            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+          </svg>
+        </button>
+
+        <!-- Botón Favoritos -->
+        <button class="btn-header-action" id="btnHeaderFav" aria-label="Ver favoritos guardados" title="Mis favoritos">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span class="fav-counter-badge" id="headerFavBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         2. HERO / PORTADA COMPACTA PARA CELULARES
+         ======================================================================= -->
+    <section class="hero-section" id="inicio">
+      <div class="container hero-mobile-container">
+        <div class="hero-badge-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          <span>CATÁLOGO DIGITAL OFICIAL</span>
+        </div>
+
+        <h1 class="hero-title-mobile">
+          Arte & Sofisticación
+          <span class="title-accent">para cada detalle de tus manos</span>
+        </h1>
+
+        <p class="hero-text-mobile">
+          Fotografías 100% reales de nuestros trabajos y precios transparentes en pesos dominicanos. Elige tu largo favorito (#1 al #8) y solicita tu cita al instante.
+        </p>
+
+        <!-- Vitrina circular luxury con el trabajo real destacado -->
+        <div class="hero-reel-mobile">
+          <div class="hero-reel-card">
+            <img src="assets/images/crops/fullset_luxury_card.webp" alt="Diseño real Kendra Nails" loading="eager" onerror="this.onerror=null; this.src='assets/images/original/sheet_full_set.jpg';">
+          </div>
+          <div class="hero-reel-badge">
+            <span>Full Set Luxury Gold</span> · RD$ 1,000
+          </div>
+        </div>
+
+        <div class="hero-cta-group">
+          <a href="#catalogo" class="btn-hero-primary">
+            <span>Ver Diseños</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"/>
+              <polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+
+          <a href="#contacto" class="btn-hero-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            <span>Pedir Cita</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         3. BARRA DE HERRAMIENTAS: BÚSQUEDA Y FILTROS TÁCTILES
+         ======================================================================= -->
+    <section class="catalog-toolbar-section" id="catalogToolbar">
+      <div class="container">
+        <!-- Buscador táctil -->
+        <div class="toolbar-search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <input type="text" id="catalogSearchInput" class="search-input-mobile" placeholder="Buscar estilo o técnica (ej. Baby Boomer, French, Pies)..." autocomplete="off">
+          <span class="search-clear-btn" id="searchClearBtn" title="Limpiar búsqueda">&times;</span>
+        </div>
+
+        <!-- Filtros horizontales desplazables con el dedo -->
+        <nav class="filter-scroll-wrapper" id="filterPillsContainer" aria-label="Categorías de uñas">
+          <!-- Renderizado dinámico con JS -->
+        </nav>
+
+        <!-- Subfila de controles: Alternar vista 1 Col / 2 Col y ordenar -->
+        <div class="catalog-controls-subrow">
+          <div class="view-layout-toggle" aria-label="Alternar diseño de cuadrícula">
+            <button class="btn-view-toggle" id="btnView1Col" title="Vista grande (1 columna)">
+              <span>📱 1 Col</span>
+            </button>
+            <button class="btn-view-toggle active" id="btnView2Col" title="Vista cuadrícula (2 columnas)">
+              <span>🔲 2 Col</span>
+            </button>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:6px;">
+            <select id="catalogSortSelect" class="sort-select-mobile" aria-label="Ordenar catálogo por">
+              <option value="destacados">✨ Destacados</option>
+              <option value="precio-asc">💵 Menor precio</option>
+              <option value="precio-desc">💎 Mayor precio</option>
+              <option value="nombre">🔤 Nombre A-Z</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. CUADRÍCULA DE DISEÑOS ADAPTADA A CELULAR
+         ======================================================================= -->
+    <section class="catalog-container" id="catalogo">
+      <div class="container">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; font-size:0.8rem; color:var(--c-text-muted);">
+          <span id="activeFilterLabel" style="font-weight:700; color:var(--c-plum);">Todos los diseños</span>
+          <span id="catalogResultsCount">Cargando catálogo...</span>
+        </div>
+
+        <!-- Cuadrícula interactiva -->
+        <div class="designs-grid" id="designsGrid">
+          <!-- Renderizado de tarjetas con JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. SERVICIOS PARA PIES (DESTACADO)
+         ======================================================================= -->
+    <section style="padding: 32px 0; background: var(--c-rose-light); border-top: 1px solid var(--c-border); border-bottom: 1px solid var(--c-border);" id="servicios-pies">
+      <div class="container">
+        <div style="text-align:center; margin-bottom: 20px;">
+          <span style="font-size:0.7rem; text-transform:uppercase; letter-spacing:2px; font-weight:700; color:var(--c-gold-dark);">Especialidad</span>
+          <h2 style="font-family:var(--font-display); font-size:1.6rem; color:var(--c-plum); margin:4px 0;">Servicios para Pies</h2>
+          <p style="font-size:0.85rem; color:var(--c-text-muted);">Esmaltado en gel y reconstrucción acrílica para pies impecables.</p>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;">
+          <div style="background:#FFF; border-radius:var(--radius-md); padding:16px; border:1px solid var(--c-border); display:flex; gap:14px; align-items:center;">
+            <img src="assets/images/crops/pies_gel_card.webp" alt="Pintura en gel pies" style="width:70px; height:70px; border-radius:var(--radius-sm); object-fit:cover; border:1px solid var(--c-gold-light);">
+            <div>
+              <h4 style="font-size:0.95rem; color:var(--c-plum); font-weight:700;">Pintura en Gel (Pies)</h4>
+              <p style="font-size:0.78rem; color:var(--c-text-muted); margin-bottom:4px;">Esmaltado semipermanente de alta duración con línea French opcional.</p>
+              <strong style="color:var(--c-gold-dark); font-size:1.1rem;">RD$ 350</strong>
+            </div>
+          </div>
+
+          <div style="background:#FFF; border-radius:var(--radius-md); padding:16px; border:1px solid var(--c-border); display:flex; gap:14px; align-items:center;">
+            <img src="assets/images/crops/pies_acripies_card.webp" alt="Acripies pies" style="width:70px; height:70px; border-radius:var(--radius-sm); object-fit:cover; border:1px solid var(--c-gold-light);">
+            <div>
+              <h4 style="font-size:0.95rem; color:var(--c-plum); font-weight:700;">Acripies French (Pies)</h4>
+              <p style="font-size:0.78rem; color:var(--c-text-muted); margin-bottom:4px;">Reconstrucción acrílica completa en pies con acabado French impecable.</p>
+              <strong style="color:var(--c-gold-dark); font-size:1.1rem;">RD$ 500</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. CONTACTO & CITAS
+         ======================================================================= -->
+    <section style="padding: 40px 0 20px; background: var(--c-plum); color: var(--c-ivory);" id="contacto">
+      <div class="container" style="text-align: center;">
+        <h3 style="font-family:var(--font-display); font-size:1.6rem; color:var(--c-gold-light); margin-bottom:8px;">Kendra Nails Studio</h3>
+        <p style="font-size:0.88rem; color:#E2CFD8; max-width:440px; margin:0 auto 20px;">
+          Atención personalizada bajo cita previa. Escríbenos a WhatsApp para apartar tu espacio y confirmar tu diseño.
+        </p>
+
+        <a href="https://wa.me/8090000000?text=%C2%A1Hola%20Kendra%20Nails!%20Vi%20su%20cat%C3%A1logo%20digital%20y%20me%20gustar%C3%ADa%20agendar%20una%20cita." target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:8px; background:var(--c-whatsapp); color:#FFF; padding:14px 28px; border-radius:var(--radius-full); font-weight:700; font-size:0.95rem; box-shadow:0 4px 16px rgba(37,211,102,0.3);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          <span>Agendar Cita por WhatsApp</span>
+        </a>
+
+        <div style="margin-top: 24px; font-size: 0.78rem; color: #A68B99;">
+          <p>Instagram: <strong>@kendranails</strong> · Horario: Lunes a Sábado 9:00 AM – 7:00 PM</p>
+          <p style="margin-top:6px;">&copy; 2026 Kendra Nails. ✦ Uñas que hablan de ti ✦</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       7. BOTÓN FLOTANTE DIRECTO DE WHATSAPP
+       ======================================================================= -->
+  <a href="https://wa.me/8090000000?text=%C2%A1Hola%20Kendra%20Nails!%20Vi%20su%20cat%C3%A1logo%20digital%20y%20tengo%20una%20consulta." target="_blank" rel="noopener" class="floating-wa-bubble" aria-label="Escribir por WhatsApp" title="WhatsApp Kendra Nails">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+    </svg>
+  </a>
+
+  <!-- =======================================================================
+       8. BARRA DE NAVEGACIÓN INFERIOR PARA PULGAR (THUMB BAR CLIENTAS)
+       ======================================================================= -->
+  <nav class="mobile-bottom-bar" aria-label="Navegación del catálogo">
+    <button class="thumb-nav-btn active" data-nav="home">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span>Inicio</span>
+    </button>
+
+    <button class="thumb-nav-btn" data-nav="catalog">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="7" height="7"/>
+        <rect x="14" y="3" width="7" height="7"/>
+        <rect x="14" y="14" width="7" height="7"/>
+        <rect x="3" y="14" width="7" height="7"/>
+      </svg>
+      <span>Diseños</span>
+    </button>
+
+    <button class="thumb-nav-btn" data-nav="favorites">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+      <span class="thumb-badge" id="bottomFavBadge">0</span>
+      <span>Favoritos</span>
+    </button>
+
+    <button class="thumb-nav-btn" data-nav="share">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="18" cy="5" r="3"/>
+        <circle cx="6" cy="12" r="3"/>
+        <circle cx="18" cy="19" r="3"/>
+        <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+        <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+      </svg>
+      <span>Compartir</span>
+    </button>
+
+    <button class="thumb-nav-btn" data-nav="whatsapp">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+      </svg>
+      <span>WhatsApp</span>
+    </button>
+  </nav>
+
+  <!-- =======================================================================
+       9. MODAL INFERIOR ESTILO BOTTOM SHEET DRAWER (DETALLE DE DISEÑO)
+       ======================================================================= -->
+  <div class="modal-overlay" id="designModalBackdrop" role="dialog" aria-modal="true">
+    <div class="bottom-sheet-card">
+      <div class="sheet-handle-bar"></div>
+      
+      <div class="sheet-header-mobile">
+        <div style="font-family:var(--font-display); font-size:0.95rem; font-weight:700; color:var(--c-plum);" id="sheetModalHeaderCategory">
+          Kendra Nails
+        </div>
+        <button class="btn-sheet-close" id="modalCloseBtn" aria-label="Cerrar">&times;</button>
+      </div>
+
+      <div class="sheet-body-scrollable" id="sheetModalBody">
+        <!-- Contenido inyectado dinámicamente -->
+      </div>
+
+      <!-- Barra de acción fija al alcance del pulgar -->
+      <div class="sheet-fixed-footer" id="sheetFixedFooter">
+        <!-- Botón de WhatsApp fijado abajo -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor de Toasts -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+  
+  <!-- Registro de Service Worker para PWA -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW error:', err));
+      });
+    }
+  </script>
+</body>
+</html>

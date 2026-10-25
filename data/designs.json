@@ -1,0 +1,510 @@
+[
+  {
+    "id": "KN-01",
+    "nombre": "Baby Boomer Clásico",
+    "categoria": "Baby Boomer",
+    "descripcion": "Técnica degradada suave de rosa nude a blanco lechoso en punta (Ombré). Acabado ultra sofisticado, natural y pulcro.",
+    "precio": 700,
+    "imagen_url": "assets/images/crops/baby_boomer_card.webp",
+    "imagen_circle": "assets/images/crops/baby_boomer_circle.png",
+    "imagen_original": "assets/images/original/sheet_baby_boomer.jpg",
+    "destacado": true,
+    "visible": true,
+    "precio_verificado": true,
+    "moneda": "DOP",
+    "simbolo_moneda": "RD$",
+    "tiene_largos": true,
+    "largos": [
+      {
+        "largo": 1,
+        "precio": 700,
+        "label": "#1 (Corto)"
+      },
+      {
+        "largo": 2,
+        "precio": 900,
+        "label": "#2"
+      },
+      {
+        "largo": 3,
+        "precio": 1050,
+        "label": "#3"
+      },
+      {
+        "largo": 4,
+        "precio": 1100,
+        "label": "#4 (Medio)"
+      },
+      {
+        "largo": 5,
+        "precio": 1250,
+        "label": "#5"
+      },
+      {
+        "largo": 6,
+        "precio": 1300,
+        "label": "#6"
+      },
+      {
+        "largo": 7,
+        "precio": 1300,
+        "label": "#7 (Confirmado en afiche)"
+      },
+      {
+        "largo": 8,
+        "precio": 1400,
+        "label": "#8 (Extra Largo)"
+      }
+    ],
+    "nota_revision": "En el afiche original, tanto el largo #6 como el #7 están fijados en $1300. Se respeta tal como aparece en la fotografía."
+  },
+  {
+    "id": "KN-02",
+    "nombre": "French Clásico Cuadrado",
+    "categoria": "French",
+    "descripcion": "Manicura francesa impecable en corte cuadrado tradicional. Base nude traslúcida y punta blanca recta ultra definida.",
+    "precio": 600,
+    "imagen_url": "assets/images/crops/french_card.webp",
+    "imagen_circle": "assets/images/crops/french_circle.png",
+    "imagen_original": "assets/images/original/sheet_french.jpg",
+    "destacado": true,
+    "visible": true,
+    "precio_verificado": true,
+    "moneda": "DOP",
+    "simbolo_moneda": "RD$",
+    "tiene_largos": true,
+    "largos": [
+      {
+        "largo": 1,
+        "precio": 600,
+        "label": "#1 (Corto)"
+      },
+      {
+        "largo": 2,
+        "precio": 1000,
+        "label": "#2"
+      },
+      {
+        "largo": 3,
+        "precio": 1200,
+        "label": "#3"
+      },
+      {
+        "largo": 4,
+        "precio": 1300,
+        "label": "#4 (Medio)"
+      },
+      {
+        "largo": 5,
+        "precio": 1400,
+        "label": "#5"
+      },
+      {
+        "largo": 6,
+        "precio": 1500,
+        "label": "#6"
+      },
+      {
+        "largo": 7,
+        "precio": 1600,
+        "label": "#7"
+      },
+      {
+        "largo": 8,
+        "precio": 1700,
+        "label": "#8 (Extra Largo)"
+      }
+    ],
+    "nota_revision": "Precios 100% verificados y legibles en afiche original."
+  },
+  {
+    "id": "KN-03",
+    "nombre": "Porcelanato Milky White",
+    "categoria": "Porcelanato",
+    "descripcion": "Efecto porcelana lechoso uniforme (Milky White) con acabado pulcro, satinado y de aspecto ultra limpio.",
+    "precio": 700,
+    "imagen_url": "assets/images/crops/porcelanato_1_card.webp",
+    "imagen_circle": "assets/images/crops/porcelanato_1_circle.png",
+    "imagen_original": "assets/images/original/sheet_porcelanato.jpg",
+    "destacado": true,
+    "visible": true,
+    "precio_verificado": true,
+    "moneda": "DOP",
+    "simbolo_moneda": "RD$",
+    "tiene_largos": true,
+    "largos": [
+      {
+        "largo": 1,
+        "precio": 700,
+        "label": "#1 (Corto)"
+      },
+      {
+        "largo": 2,
+        "precio": 900,
+        "label": "#2"
+      },
+      {
+        "largo": 3,
+        "precio": 1150,
+        "label": "#3"
+      },
+      {
+        "largo": 4,
+        "precio": 1200,
+        "label": "#4 (Medio)"
+      },
+      {
+        "largo": 5,
+        "precio": 1300,
+        "label": "#5"
+      },
+      {
+        "largo": 6,
+        "precio": 1400,
+        "label": "#6"
+      },
+      {
+        "largo": 7,
+        "precio": 1500,
+        "label": "#7"
+      },
+      {
+        "largo": 8,
+        "precio": 1600,
+        "label": "#8 (Extra Largo)"
+      }
+    ],
+    "nota_revision": "Precios 100% verificados y legibles en afiche original."
+  },
+  {
+    "id": "KN-04",
+    "nombre": "Porcelanato Square Long",
+    "categoria": "Porcelanato",
+    "descripcion": "Variación de porcelanato lechoso en silueta cuadrada larga, perfecta para estilizar las manos con presencia pulida.",
+    "precio": 700,
+    "imagen_url": "assets/images/crops/porcelanato_2_card.webp",
+    "imagen_circle": "assets/images/crops/porcelanato_2_circle.png",
+    "imagen_original": "assets/images/original/sheet_porcelanato.jpg",
+    "destacado": false,
+    "visible": true,
+    "precio_verificado": true,
+    "moneda": "DOP",
+    "simbolo_moneda": "RD$",
+    "tiene_largos": true,
+    "largos": [
+      {
+        "largo": 1,
+        "precio": 700,
+        "label": "#1 (Corto)"
+      },
+      {
+        "largo": 2,
+        "precio": 900,
+        "label": "#2"
+      },
+      {
+        "largo": 3,
+        "precio": 1150,
+        "label": "#3"
+      },
+      {
+        "largo": 4,
+        "precio": 1200,
+        "label": "#4 (Medio)"
+      },
+      {
+        "largo": 5,
+        "precio": 1300,
+        "label": "#5"
+      },
+      {
+        "largo": 6,
+        "precio": 1400,
+        "label": "#6"
+      },
+      {
+        "largo": 7,
+        "precio": 1500,
+        "label": "#7"
+      },
+      {
+        "largo": 8,
+        "precio": 1600,
+        "label": "#8 (Extra Largo)"
+      }
+    ],
+    "nota_revision": "Precios corresponden a la técnica Porcelanato del afiche original."
+  },
+  {
+    "id": "KN-05",
+    "nombre": "Full Set Luxury Gold & Pearls",
+    "categoria": "Full Set",
+    "descripcion": "Set completo de alta gama con pedrería fina, cadenas doradas colgantes, perlas y detalles franceses joya.",
+    "precio": 1000,
+    "imagen_url": "assets/images/crops/fullset_luxury_card.webp",
+    "imagen_circle": "assets/images/crops/fullset_luxury_circle.png",
+    "imagen_original": "assets/images/original/sheet_full_set.jpg",
+    "destacado": true,
+    "visible": true,
+    "precio_verificado": true,
+    "moneda": "DOP",
+    "simbolo_moneda": "RD$",
+    "tiene_largos": true,
+    "largos": [
+      {
+        "largo": 1,
+        "precio": 1000,
+        "label": "#1 (Corto)"
+      },
+      {
+        "largo": 2,
+        "precio": 1200,
+        "label": "#2"
+      },
+      {
+        "largo": 3,
+        "precio": 1300,
+        "label": "#3"
+      },
+      {
+        "largo": 4,
+        "precio": 1350,
+        "label": "#4 (Medio)"
+      },
+      {
+        "largo": 5,
+        "precio": 1450,
+        "label": "#5"
+      },
+      {
+        "largo": 6,
+        "precio": 1500,
+        "label": "#6"
+      },
+      {
+        "largo": 7,
+        "precio": 1600,
+        "label": "#7"
+      },
+      {
+        "largo": 8,
+        "precio": 1750,
+        "label": "#8 (Extra Largo)"
+      }
+    ],
+    "nota_revision": "Precios 100% verificados y legibles en afiche original de Full Set."
+  },
+  {
+    "id": "KN-06",
+    "nombre": "Full Set 3D Floral & Leopard",
+    "categoria": "Full Set",
+    "descripcion": "Nail art escultural con flores acrílicas 3D moldeadas a mano, centro de cristal, y animal print sobre punta francesa.",
+    "precio": 1000,
+    "imagen_url": "assets/images/crops/fullset_floral_card.webp",
+    "imagen_circle": "assets/images/crops/fullset_floral_circle.png",
+    "imagen_original": "assets/images/original/sheet_full_set.jpg",
+    "destacado": true,
+    "visible": true,
+    "precio_verificado": true,
+    "moneda": "DOP",
+    "simbolo_moneda": "RD$",
+    "tiene_largos": true,
+    "largos": [
+      {
+        "largo": 1,
+        "precio": 1000,
+        "label": "#1 (Corto)"
+      },
+      {
+        "largo": 2,
+        "precio": 1200,
+        "label": "#2"
+      },
+      {
+        "largo": 3,
+        "precio": 1300,
+        "label": "#3"
+      },
+      {
+        "largo": 4,
+        "precio": 1350,
+        "label": "#4 (Medio)"
+      },
+      {
+        "largo": 5,
+        "precio": 1450,
+        "label": "#5"
+      },
+      {
+        "largo": 6,
+        "precio": 1500,
+        "label": "#6"
+      },
+      {
+        "largo": 7,
+        "precio": 1600,
+        "label": "#7"
+      },
+      {
+        "largo": 8,
+        "precio": 1750,
+        "label": "#8 (Extra Largo)"
+      }
+    ],
+    "nota_revision": "Precios corresponden a la escala del afiche original de Full Set."
+  },
+  {
+    "id": "KN-07",
+    "nombre": "Cover Liso Nude Natural",
+    "categoria": "Cover Liso",
+    "descripcion": "Acrílico cover en tono nude piel uniforme, corte square estructurado y acabado liso brillante de alta duración.",
+    "precio": 600,
+    "imagen_url": "assets/images/crops/cover_liso_card.webp",
+    "imagen_circle": "assets/images/crops/cover_liso_circle.png",
+    "imagen_original": "assets/images/original/sheet_cover_liso.jpg",
+    "destacado": false,
+    "visible": true,
+    "precio_verificado": true,
+    "moneda": "DOP",
+    "simbolo_moneda": "RD$",
+    "tiene_largos": true,
+    "largos": [
+      {
+        "largo": 1,
+        "precio": 600,
+        "label": "#1 (Corto)"
+      },
+      {
+        "largo": 2,
+        "precio": 800,
+        "label": "#2"
+      },
+      {
+        "largo": 3,
+        "precio": 1000,
+        "label": "#3"
+      },
+      {
+        "largo": 4,
+        "precio": 1100,
+        "label": "#4 (Medio)"
+      },
+      {
+        "largo": 5,
+        "precio": 1200,
+        "label": "#5"
+      },
+      {
+        "largo": 6,
+        "precio": 1300,
+        "label": "#6"
+      },
+      {
+        "largo": 7,
+        "precio": 1400,
+        "label": "#7"
+      },
+      {
+        "largo": 8,
+        "precio": 1500,
+        "label": "#8 (Extra Largo)"
+      }
+    ],
+    "nota_revision": "Precios 100% verificados y legibles en afiche original de Cover Liso."
+  },
+  {
+    "id": "KN-08",
+    "nombre": "Acrílico y Gel Black Croc Effect",
+    "categoria": "Acrílico y Gel",
+    "descripcion": "Diseño moderno en forma almendrada combinando french negro de impacto con relieve táctil efecto piel de cocodrilo brillante.",
+    "precio": 700,
+    "imagen_url": "assets/images/crops/acrilico_gel_card.webp",
+    "imagen_circle": "assets/images/crops/acrilico_gel_circle.png",
+    "imagen_original": "assets/images/original/sheet_acrilico_y_gel.jpg",
+    "destacado": true,
+    "visible": true,
+    "precio_verificado": true,
+    "moneda": "DOP",
+    "simbolo_moneda": "RD$",
+    "tiene_largos": true,
+    "largos": [
+      {
+        "largo": 1,
+        "precio": 700,
+        "label": "#1 (Corto)"
+      },
+      {
+        "largo": 2,
+        "precio": 950,
+        "label": "#2"
+      },
+      {
+        "largo": 3,
+        "precio": 1150,
+        "label": "#3"
+      },
+      {
+        "largo": 4,
+        "precio": 1250,
+        "label": "#4 (Medio)"
+      },
+      {
+        "largo": 5,
+        "precio": 1350,
+        "label": "#5"
+      },
+      {
+        "largo": 6,
+        "precio": 1450,
+        "label": "#6"
+      },
+      {
+        "largo": 7,
+        "precio": 1500,
+        "label": "#7"
+      },
+      {
+        "largo": 8,
+        "precio": 1600,
+        "label": "#8 (Extra Largo)"
+      }
+    ],
+    "nota_revision": "Precios 100% verificados y legibles en afiche original de Acrílico y Gel."
+  },
+  {
+    "id": "KN-09",
+    "nombre": "Pintura en Gel (Pies)",
+    "categoria": "Pies / Pedicura",
+    "descripcion": "Esmaltado semipermanente en gel para uñas de los pies, con base traslúcida, línea French fina opcional y máximo brillo.",
+    "precio": 350,
+    "imagen_url": "assets/images/crops/pies_gel_card.webp",
+    "imagen_circle": "assets/images/crops/pies_gel_circle.png",
+    "imagen_original": "assets/images/original/sheet_pies.jpg",
+    "destacado": false,
+    "visible": true,
+    "precio_verificado": true,
+    "moneda": "DOP",
+    "simbolo_moneda": "RD$",
+    "tiene_largos": false,
+    "largos": null,
+    "nota_revision": "Precio único para servicio en pies verificado en afiche oficial ($350)."
+  },
+  {
+    "id": "KN-10",
+    "nombre": "Acripies (Pies)",
+    "categoria": "Pies / Pedicura",
+    "descripcion": "Aplicación de acrílico y reconstrucción en las uñas de los pies con punta French blanca, acabado uniforme y resistencia duradera.",
+    "precio": 500,
+    "imagen_url": "assets/images/crops/pies_acripies_card.webp",
+    "imagen_circle": "assets/images/crops/pies_acripies_circle.png",
+    "imagen_original": "assets/images/original/sheet_pies.jpg",
+    "destacado": true,
+    "visible": true,
+    "precio_verificado": true,
+    "moneda": "DOP",
+    "simbolo_moneda": "RD$",
+    "tiene_largos": false,
+    "largos": null,
+    "nota_revision": "Precio único para servicio de acripies verificado en afiche oficial ($500)."
+  }
+]
