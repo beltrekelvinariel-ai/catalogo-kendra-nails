@@ -903,10 +903,28 @@
   // -------------------------------------------------------------------------
   // 9. WHATSAPP & COMPARTIR NATIVO
   // -------------------------------------------------------------------------
+  function getCleanWhatsAppPhone() {
+    const config = window.KENDRA_CONFIG || {};
+    const contact = config.contact || {};
+    let phone = (contact.whatsapp || '18299357408').toString().replace(/[^0-9]/g, '');
+
+    // Evitar estrictamente el número placeholder antiguo de prueba
+    if (phone === '8090000000' || !phone) {
+      phone = '18299357408';
+    }
+
+    // Asegurar código de país 1 para República Dominicana
+    if (phone.length === 10 && (phone.startsWith('809') || phone.startsWith('829') || phone.startsWith('849'))) {
+      phone = '1' + phone;
+    }
+
+    return phone;
+  }
+
   function openWhatsAppForDesign(design) {
     const config = window.KENDRA_CONFIG || {};
     const contact = config.contact || {};
-    const phone = contact.whatsapp || '18299357408';
+    const phone = getCleanWhatsAppPhone();
     
     const selectedLength = AppState.selectedLengths[design.id] || 1;
     let price = design.precio;
@@ -928,16 +946,14 @@
       .replace('{lengthText}', lengthText)
       .replace('{price}', `RD$ ${price.toLocaleString('es-DO')}`);
 
-    const waUrl = `https://wa.me/${phone.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(message)}`;
+    const waUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
     window.open(waUrl, '_blank');
   }
 
   function openGeneralWhatsApp() {
-    const config = window.KENDRA_CONFIG || {};
-    const contact = config.contact || {};
-    const phone = contact.whatsapp || '18299357408';
+    const phone = getCleanWhatsAppPhone();
     const message = encodeURIComponent('¡Hola Kendra Nails! Vi su catálogo digital y me gustaría agendar una cita o hacer una consulta.');
-    window.open(`https://wa.me/${phone.replace(/[^0-9]/g, '')}?text=${message}`, '_blank');
+    window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${message}`, '_blank');
   }
 
   function shareCatalog() {

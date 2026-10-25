@@ -3,7 +3,7 @@
  * Soporte offline, caché de recursos estáticos y carga ultra rápida en celulares
  */
 
-const CACHE_NAME = 'kendra-nails-v4';
+const CACHE_NAME = 'kendra-nails-v5';
 const STATIC_ASSETS = [
   './',
   './index.html',
@@ -64,8 +64,9 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Para datos JSON o llamadas a Google Sheets: Network-First con fallback a caché
-  if (url.pathname.endsWith('.json') || url.hostname.includes('google')) {
+  // Para páginas HTML, scripts JS, CSS y datos JSON: Network-First con fallback a caché
+  // Esto garantiza que cualquier cambio de código, precios o números se vea de inmediato
+  if (url.pathname.endsWith('.html') || url.pathname.endsWith('.js') || url.pathname.endsWith('.css') || url.pathname.endsWith('.json') || url.pathname.endsWith('/') || url.hostname.includes('google')) {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
@@ -80,16 +81,10 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Para recursos estáticos (imágenes, CSS, JS): Cache-First con actualización de fondo
+  // Para imágenes y recursos pesados: Cache-First con revalidación en segundo plano
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       if (cachedResponse) {
-        // En segundo plano revalidar caché si hay red
-        fetch(event.request).then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200) {
-            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, networkResponse));
-          }
-        }).catch(() => {});
         return cachedResponse;
       }
 
