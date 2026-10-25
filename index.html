@@ -26,7 +26,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/styles.css?v=20261025_5">
+  <link rel="stylesheet" href="css/styles.css?v=20261025_07">
+  <script>
+    // Limpieza forzada de caché para asegurar actualización inmediata de WhatsApp y diseño en iPhone
+    (function() {
+      const CURRENT_VER = '20261025_07';
+      if (localStorage.getItem('kn_cache_ver') !== CURRENT_VER) {
+        localStorage.setItem('kn_cache_ver', CURRENT_VER);
+        if ('caches' in window) {
+          caches.keys().then(function(keys) {
+            keys.forEach(function(k) { caches.delete(k); });
+          });
+        }
+      }
+    })();
+  </script>
 </head>
 <body>
 
@@ -327,8 +341,8 @@
   <!-- Contenedor de Toasts -->
   <div class="toast-container" id="toastContainer" aria-live="polite"></div>
 
-  <script src="js/config.js?v=20261025_5"></script>
-  <script src="js/app.js?v=20261025_5"></script>
+  <script src="js/config.js?v=20261025_07"></script>
+  <script src="js/app.js?v=20261025_07"></script>
   
   <!-- Registro de Service Worker para PWA -->
   <script>

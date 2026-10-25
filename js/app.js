@@ -947,13 +947,13 @@
       .replace('{price}', `RD$ ${price.toLocaleString('es-DO')}`);
 
     const waUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
-    window.open(waUrl, '_blank');
+    window.location.href = waUrl;
   }
 
   function openGeneralWhatsApp() {
     const phone = getCleanWhatsAppPhone();
     const message = encodeURIComponent('¡Hola Kendra Nails! Vi su catálogo digital y me gustaría agendar una cita o hacer una consulta.');
-    window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${message}`, '_blank');
+    window.location.href = `https://api.whatsapp.com/send?phone=${phone}&text=${message}`;
   }
 
   function shareCatalog() {
